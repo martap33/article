@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;}
+
+
+    body {
+        font-family: OPen Sans, Arial;
+        font-size: x-small;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+    .main {
+
+        width: 900px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        
+        padding: 50px 0;
+
+    }
+    .main img {
+        width: 80%;
+
+    }
+
