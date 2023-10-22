@@ -1,28 +1,223 @@
 *{
     margin: 0;
-    padding: 0;}
-
+    padding: 0;
+    
+    }
+    
+    :root {
+        --grey1: #E8E8E8;
+        --header-green: #0aa087;
+        --dark-green: #035a63;
+        --light-green: #e8fff7;
+        --itema: #0f209a;
+        --itemb: #ac18a2;
+        --black: #000000;
+        --white: #ffffff;
+    }
 
     body {
-        font-family: OPen Sans, Arial;
+        font-family: Open Sans, Arial;
         font-size: x-small;
         width: 100%;
         display: flex;
         justify-content: center;
       }
 
-    .main {
-
+      .main-container {
+        /*background-color: var(--grey1);*/
         width: 900px;
-        height: 100%;
+
+      }
+        .banner {
+            /*background-color: var(--grey1);*/
+            background-image: url(img/bg.webp);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            gap: 5px;
+            padding: 40px;
+            margin-bottom: 40px;
+            color: var(--white);
+        
+        }
+
+    /* tags */
+    .bw {
+		display: none;
+	}
+
+	.tag {
+		font-size: 80%;
+		padding: 5px 15px;
+		border-radius: 50px;
+		display: inline-block;
+		cursor: pointer;
+		background: #A9A9A9;
+		text-decoration: none;
+		color: var(--white);
+		text-align: center;
+		font-family: arial;
+        margin-left: 10px;
+	}
+
+    /* FILTERS */
+    #item-a:checked ~ .filtered-elements > div:not([class*='item-a']),
+	#item-b:checked ~ .filtered-elements > div:not([class*='item-b']){
+		display: none;
+	}
+
+	#all:checked ~ .all,
+	#item-a:checked ~ .item-a,
+	#item-b:checked ~ .item-b {
+		background-color: #000;      
+		color: var(--white);
+	}
+
+    .filtered-elements{
+		display: flex;
+		gap: 15px;
+		width:100%;
+		flex-wrap: wrap;
+		justify-content:center;
+        padding: 20px 0;
+        margin: 15px 0 0 0;
+		
+		
+	}
+
+    .filter-all {
+        text-align: center;
+        padding: 20px 0;
+
+    }
+
+    .box {
+        border: solid 3px var(--itema);
+        border-radius: 5px;
+        width: 150px;
         display: flex;
         justify-content: center;
+        align-content: center;
+        position: relative;
+
+    }
+    .box.item-b {
+        border-color:var(--itemb);
+
+    }
+
+    .main-img img {
+
+        width: 50%;
+        margin: 25% 0;
         
-        padding: 50px 0;
+    }
+
+    .hover-img {
+        position: absolute;
+        z-index: 1;
+        right: 5px;
+        
 
     }
-    .main img {
+
+    .hover-img img {
+
+        width: 25px;
+        margin: 5px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .tooltip-text{
+        position: absolute;
+        visibility: hidden;
+        z-index: 2;
+        width: 100px;
+        color: var(--white);
+        font-size: 12px;
+        background-color: var(--black);
+        border-radius: 3px;
+        padding: 10px 15px 10px 15px;
+        text-align: left;
+
+    }
+
+    .hover-img:hover .tooltip-text {
+        visibility: visible;
+      }
+
+      #top {
+        top: -90px;
+        left: -85px;
+      }
+    .option {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 30px;
+
+
+    }
+
+    .option-logo {
+        width: 30%;
+        background-color:var(--itemb);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    
+    }
+   
+    .option-logo img {
+        margin: auto 0;
         width: 80%;
+       
+    }
+
+    .option-description {
+        text-align: left;
+        width: 70%;
+        padding: 0 20px;
+        border-right: solid 2px var(--grey1);
+    
+    }
+    .claims {
+        margin: 40px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
 
     }
 
+    .claim-box{
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        height: 100%;
+        border: solid 3px var(--itemb); 
+        border-radius: 5px;
+        align-items: center;
+    }
+        .claim-icon {
+        height: 70%;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        
+    }
+        
+        .claim-txt {
+        height: 30%;
+        color: var(--itemb);
+        padding: 10px 0;
+
+        }
+        .claim-icon img {
+        width: 30%;
+        margin: 0 auto;
+
+        }
+        
